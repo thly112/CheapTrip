@@ -3,6 +3,7 @@ import './App.css';
 import Footer from "./components/footer.tsx";
 import Header from "./components/header.tsx";
 import Home from "./pages/Home.tsx";
+
 function App() {
 
   return (
@@ -10,7 +11,8 @@ function App() {
       <Header />
       <Home />
       <Footer />
-    </div>
+      {/* <Login /> */}
+      </div>
   );
 }
 
