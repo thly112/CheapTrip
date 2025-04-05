@@ -11,6 +11,9 @@
     font-family: 'Arial', sans-serif;
     overflow: hidden;
   }
+a {
+    text-decoration: none;
+}
   
   /* Background CheapTrip logo (now an image) */
   .background-logo {

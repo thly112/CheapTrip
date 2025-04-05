@@ -1,5 +1,6 @@
 // Home.tsx
 import React from 'react';
+import { Link } from 'react-router-dom'; 
 import '../styles/Home.css';
 import logo from '../assets/logo_tach_nen.png'; // Adjust the path to your logo image
 
@@ -32,10 +33,12 @@ const Home: React.FC = () => {
 
         {/* Buttons */}
         <div className="buttons">
-          <button className="try-cheaptrip-button">
-            Tạo Lịch Trình <span className="arrow">→</span>
-          </button>
-          <button className="api-button">Xem Lại Lịch Trình</button>
+            <Link to="/create-trip" className="try-cheaptrip-button">
+                Tạo Lịch Trình <span className="arrow">→</span>
+            </Link>
+            <Link to="/trip-history" className="api-button">
+                Xem Lại Lịch Trình
+            </Link>
         </div>
       </div>
 

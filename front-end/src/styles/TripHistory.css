@@ -1,0 +1,61 @@
+/* src/styles/TripHistory.css */
+.trip-history-page {
+    min-height: 100vh;
+    background-color: #001840; /* Match the background color of the Home page */
+    color: #FFFEF0; /* Off-white text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+  }
+  
+  .trip-history-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .trip-history-page p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: rgba(255, 254, 240, 0.8);
+  }
+  
+  .trip-list {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .trip-item {
+    background-color: rgba(16, 42, 113, 0.3); /* Semi-transparent blue (#102A71) */
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 254, 240, 0.3);
+  }
+  
+  .trip-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #FFFEF0;
+  }
+  
+  .trip-item p {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: rgba(255, 254, 240, 0.8);
+  }
+  
+  .trip-history-page a {
+    color: #F5C400; /* Yellow */
+    text-decoration: none;
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+  
+  .trip-history-page a:hover {
+    color: #FFDF5F; /* Light yellow on hover */
+  }
