@@ -1,21 +1,32 @@
-const axios = require("axios");
 require("dotenv").config();
+const axios = require("axios");
 
-const getItineraryFromGPT = async (prompt) => {
-  const res = await axios.post(
-    "https://api.openai.com/v1/chat/completions",
-    {
-      model: "gpt-4",
-      messages: [{ role: "user", content: prompt }],
-    },
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+
+async function getItineraryFromGemini(prompt) {
+  try {
+    const response = await axios.post(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
+      {
+        contents: [
+          {
+            parts: [{ text: prompt }],
+          },
+        ],
       },
-    }
-  );
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
-  return res.data.choices[0].message.content;
-};
+    const text = response.data.candidates?.[0]?.content?.parts?.[0]?.text;
+    return text || "Không có nội dung trả về.";
+  } catch (error) {
+    console.error("❌ Lỗi khi gọi Gemini API:", error.response?.data || error.message);
+    throw new Error("Gemini API call failed");
+  }
+}
 
-module.exports = { getItineraryFromGPT };
+module.exports = { getItineraryFromGemini };
