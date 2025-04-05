@@ -35,12 +35,13 @@ import Header from "./components/header.tsx";
 import Footer from "./components/footer.tsx";
 import Home from "./pages/Home.tsx";
 import Login from "./pages/Login.js";
+import TripHistory from "./pages/TripHistory.tsx"
 // import Register from './pages/Register';
 
 function Layout() {
   const location = useLocation();
   const hideHeaderFooter = location.pathname === '/login';
-
+  
   return (
     <div className="App">
       {!hideHeaderFooter && <Header />}
@@ -48,6 +49,7 @@ function Layout() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/trip-history" element={<TripHistory />} />
         </Routes>
       </main>
       {!hideHeaderFooter && <Footer />}
