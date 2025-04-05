@@ -30,13 +30,7 @@ const Home: React.FC = () => {
           </button>
         </div>
 
-        {/* Buttons */}
-        <div className="buttons">
-          <button className="try-cheaptrip-button">
-            Tạo Lịch Trình <span className="arrow">→</span>
-          </button>
-          <button className="api-button">Xem Lại Lịch Trình</button>
-        </div>
+       
       </div>
 
       {/* Scroll indicator */}

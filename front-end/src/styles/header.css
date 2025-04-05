@@ -3,22 +3,26 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #F5C400;
+  background-color: #f9d33e;
   color: white;
+  height: 50px;
 }
 
 .logo img {
   height: 50px;
   width: 50px;
   border-radius: 50%;
+  display: flex;
+  margin-top: 10px;
 }
+
 
 .search-bar {
   display: flex;
 }
 
 .search-bar input {
-  padding: 5px;
+  padding: 4px;
   font-size: 16px;
 }
 
@@ -42,7 +46,7 @@
   position: relative;
   cursor: pointer;
 }
-
+/* 
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -62,4 +66,37 @@
 
 .dropdown-menu a:hover {
   background-color: #555;
+}
+   */
+  /* Buttons */
+  .buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* .try-cheaptrip-button, */
+  .api-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    /* font-weight: bold; */
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .api-button {
+    background-color: rgba(16, 42, 113, 0.3);
+    color: #FFFEF0; /* Off-white */
+    border: 1px solid rgba(255, 254, 240, 0.5); /* Off-white border */
+  }
+  
+  .api-button:hover {
+    background-color: rgba(16, 42, 113, 0.3); /* Semi-transparent blue (#102A71) */
+  }
+
+.header-right {
+  display: inline-flex;
+  align-items: center;
+  font-size: 18px;
 }

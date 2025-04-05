@@ -1,4 +1,8 @@
 /* Home.css */
+* {
+  margin: 0;
+  
+}
 .home {
     position: relative;
     min-height: 100vh;
@@ -78,43 +82,7 @@
   .search-button:hover {
     background-color: #FFDF5F; /* Light yellow on hover */
   }
-    
-  /* Buttons */
-  .buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-  }
   
-  .try-cheaptrip-button,
-  .api-button {
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .try-cheaptrip-button {
-    background-color: #F5C400; /* Yellow */
-    color: #001840; /* Dark blue text */
-    border: none;
-  }
-  
-  .try-cheaptrip-button:hover {
-    background-color: #FFDF5F; /* Light yellow on hover */
-  }
-  
-  .api-button {
-    background-color: rgba(16, 42, 113, 0.3);
-    color: #FFFEF0; /* Off-white */
-    border: 1px solid rgba(255, 254, 240, 0.5); /* Off-white border */
-  }
-  
-  .api-button:hover {
-    background-color: rgba(16, 42, 113, 0.3); /* Semi-transparent blue (#102A71) */
-  }
   
   /* Scroll indicator */
   .scroll-indicator {
@@ -126,5 +94,5 @@
   }
   
   .scroll-indicator svg {
-    color: #FFFEF0; /* Off-white */
+    /* color: #FFFEF0; */
   }
