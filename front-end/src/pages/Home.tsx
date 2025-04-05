@@ -1,7 +1,7 @@
 // Home.tsx
 import React from 'react';
 import { Link } from 'react-router-dom'; 
-import '../styles/Home.css';
+import '../styles/home.css';
 import logo from '../assets/logo_tach_nen.png'; // Adjust the path to your logo image
 
 const Home: React.FC = () => {
