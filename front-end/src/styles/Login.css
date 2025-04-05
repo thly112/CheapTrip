@@ -1,6 +1,6 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
-body {
+.login-page {
   margin: 0;
   padding: 0;
   display: flex;
@@ -9,6 +9,7 @@ body {
   height: 100vh;
   background-color: #fff198;
 }
+
 
 .login-container {
   display: flex;
