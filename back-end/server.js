@@ -8,12 +8,18 @@ const reminderRoutes = require('./routes/reminderRoutes');
 const recommendationRoutes = require('./routes/recommendationRoutes');
 const weatherForecastRoutes = require('./routes/weatherForecastRoutes');
 require('dotenv').config();
+const cors = require('cors');
 
 const app = express();
 
 // Middleware
 app.use(express.json());
-
+// Cấu hình CORS
+app.use(cors({
+    origin: 'http://localhost:3000', // Chỉ cho phép frontend từ localhost:3000
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Các phương thức cho phép
+    allowedHeaders: ['Content-Type', 'Authorization'], // Các header được phép
+  }));
 // Routes
 app.use('/api/users', userRoutes);
 app.use('/api/trips', tripRoutes);

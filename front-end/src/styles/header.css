@@ -1,3 +1,4 @@
+/* CSS cho Header */
 .header {
   display: flex;
   justify-content: space-between;
@@ -15,7 +16,6 @@
   display: flex;
   margin-top: 10px;
 }
-
 
 .search-bar {
   display: flex;
@@ -46,59 +46,58 @@
   position: relative;
   cursor: pointer;
 }
-/* 
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: #444;
-  border: 1px solid #555;
-  border-radius: 5px;
-  width: 200px;
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
 }
 
-.dropdown-menu a {
-  display: block;
-  padding: 10px;
+.api-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.api-button {
+  background-color: rgba(16, 42, 113, 0.3);
+  color: #FFFEF0; /* Off-white */
+  border: 1px solid rgba(255, 254, 240, 0.5); /* Off-white border */
+}
+
+.api-button:hover {
+  background-color: rgba(16, 42, 113, 0.3); /* Semi-transparent blue (#102A71) */
+}
+
+/* Nút Đăng Xuất */
+.auth-links button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: #ff4d4d; /* Màu đỏ cho nút đăng xuất */
   color: white;
-  text-decoration: none;
+  border: none;
+  transition: background-color 0.3s, transform 0.3s ease;
+  margin-left: 10px;
 }
 
-.dropdown-menu a:hover {
-  background-color: #555;
+.auth-links button:hover {
+  background-color: #e60000; /* Đỏ đậm khi hover */
+  transform: scale(1.05); /* Phóng to nút một chút khi hover */
 }
 
-   */
-  /* Buttons */
-  .buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  /* .try-cheaptrip-button, */
-  .api-button {
-    padding: 12px 24px;
-    font-size: 16px;
-    /* font-weight: bold; */
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .api-button {
-    background-color: rgba(16, 42, 113, 0.3);
-    color: #FFFEF0; /* Off-white */
-    border: 1px solid rgba(255, 254, 240, 0.5); /* Off-white border */
-  }
-  
-  .api-button:hover {
-    background-color: rgba(16, 42, 113, 0.3); /* Semi-transparent blue (#102A71) */
-  }
+.auth-links button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 77, 77, 0.7); /* Tạo viền sáng khi focus */
+}
 
+/* Định dạng cho phần header-right */
 .header-right {
   display: inline-flex;
   align-items: center;
   font-size: 18px;
 }
-

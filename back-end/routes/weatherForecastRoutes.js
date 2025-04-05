@@ -1,11 +1,11 @@
-// routes/expenseRoutes.js
+// routes/weatherForecastRoutes.js
 const express = require('express');
 const router = express.Router();
-const expenseController = require('../controllers/expenseController');
+const weatherForecastController = require('../controllers/weatherForecastController');
 const { authenticateToken } = require('../middleware/auth');
-// Protected routes
-router.post('/:tripId/expenses', authenticateToken, expenseController.createExpense);
-router.get('/:tripId/expenses', authenticateToken, expenseController.getExpenses);
-router.delete('/:tripId/expenses/:expenseId', authenticateToken, expenseController.deleteExpense);
+
+router.post('/:tripId/weather', authenticateToken, weatherForecastController.createWeatherForecast);
+router.get('/:tripId/weather', authenticateToken, weatherForecastController.getWeatherForecasts);
+router.delete('/:tripId/weather/:forecastId', authenticateToken, weatherForecastController.deleteWeatherForecast);
 
 module.exports = router;
