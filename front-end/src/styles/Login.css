@@ -1,22 +1,18 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #fff198;
-}
 
 .login-container {
   display: flex;
-  width: 1200px;  /* Tăng chiều rộng */
-  height: 700px;  /* Tăng chiều cao */
-  border-radius: 20px; /* Bo tròn góc toàn bộ */
-  overflow: hidden; /* Đảm bảo hình ảnh không bị tràn ra ngoài */
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3); /* Đổ bóng */
+  width: 1200px;
+  height: 700px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+  background-color: #fff198; /* Di chuyển background-color từ body sang đây */
+  min-height: 100vh; /* Đảm bảo chiều cao tối thiểu */
+  justify-content: center; /* Căn giữa nội dung */
+  align-items: center; /* Căn giữa nội dung */
+  margin: 0; /* Đảm bảo không có margin thừa */
 }
 
 

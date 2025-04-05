@@ -4,13 +4,13 @@ import './App.css';
 import Footer from './components/footer.tsx'; // Adjust the path if needed
 import Header from './components/header.tsx'; // Adjust the path if needed
 import Home from './pages/Home.tsx';
-import TripHistory from './pages/TripHistory'; // From previous responses
-
+import TripHistory from './pages/TripHistory.tsx'; // From previous responses
+ // From previous responses
 function App() {
   return (
     <Router>
       <div className="App">
-        <Header /> {/* Header will be present on all pages */}
+        <Header /> 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/trip-history" element={<TripHistory />} />

@@ -1,61 +1,68 @@
-/* src/styles/TripHistory.css */
-.trip-history-page {
-    min-height: 100vh;
-    background-color: #001840; /* Match the background color of the Home page */
-    color: #FFFEF0; /* Off-white text */
+.trip-history-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    height: 100vh;
+    background-color: #001840;
+    color: #FFFEF0;
     font-family: 'Arial', sans-serif;
-    padding: 20px;
-  }
-  
-  .trip-history-page h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .trip-history-page p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: rgba(255, 254, 240, 0.8);
   }
   
   .trip-list {
-    width: 100%;
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    width: 30%;
+    padding: 20px;
+    background-color: rgba(16, 42, 113, 0.8);
+    overflow-y: auto;
+  }
+  
+  .trip-list h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #FFDF5F;
   }
   
   .trip-item {
-    background-color: rgba(16, 42, 113, 0.3); /* Semi-transparent blue (#102A71) */
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 15px;
     border-radius: 10px;
-    border: 1px solid rgba(255, 254, 240, 0.3);
-  }
-  
-  .trip-item h3 {
-    font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #FFFEF0;
+    cursor: pointer;
+    transition: background 0.3s;
   }
   
-  .trip-item p {
-    font-size: 1rem;
-    margin: 5px 0;
-    color: rgba(255, 254, 240, 0.8);
+  .trip-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
   }
   
-  .trip-history-page a {
-    color: #F5C400; /* Yellow */
-    text-decoration: none;
-    margin-top: 20px;
-    font-size: 1rem;
+  .trip-details {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: rgba(16, 42, 113, 0.5);
   }
   
-  .trip-history-page a:hover {
-    color: #FFDF5F; /* Light yellow on hover */
+  .trip-details h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
   }
+  
+  .trip-details p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .leaflet-container {
+    border-radius: 10px;
+  }
+  .trip-details ul {
+    list-style-type: none; /* Bỏ dấu chấm mặc định */
+    padding: 0;
+    margin-left: 0; /* Đảm bảo danh sách sát mép trái */
+    text-align: left; /* Căn trái nội dung */
+  }
+  
+  .trip-details li {
+    background-color: rgba(255, 255, 255, 0.1); /* Màu nền nhẹ */
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    color: #FFFEF0; /* Màu chữ */
+  }
+  
