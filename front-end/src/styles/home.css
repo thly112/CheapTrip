@@ -2,7 +2,7 @@
 .home {
     position: relative;
     min-height: 100vh;
-    background-color: #87CEEB; /* Dark blue background */
+    background-color: #001840; /* Dark blue background */
     color: #FFFEF0; /* Off-white text */
     display: flex;
     flex-direction: column;
@@ -20,9 +20,10 @@
     transform: translate(-50%, -50%);
     width: 50%; /* Adjust size to fit nicely in the background */
     max-width: 500px; /* Limit the maximum size */
-    opacity: 0.2; /* Semi-transparent effect ("ẩn ẩn") */
+    opacity: 0.5; /* Semi-transparent effect ("ẩn ẩn") */
     object-fit: contain; /* Ensure the image scales properly */
     pointer-events: none; /* Prevent interaction with the background image */
+    border-radius: 50%;
   }
   
   /* Main content */
