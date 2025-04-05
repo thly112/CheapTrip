@@ -1,5 +1,6 @@
 // Home.tsx
 import React from 'react';
+import { Link } from 'react-router-dom'; 
 import '../styles/home.css';
 import logo from '../assets/logo.png'; // Adjust the path to your logo image
 
@@ -30,7 +31,6 @@ const Home: React.FC = () => {
           </button>
         </div>
 
-       
       </div>
 
       {/* Scroll indicator */}

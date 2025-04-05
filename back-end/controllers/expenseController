@@ -1,0 +1,93 @@
+// controllers/expenseController.js
+const db = require('../config/db');
+
+// Tạo chi phí mới
+const createExpense = async (req, res) => {
+  const userId = req.user.id;
+  const tripId = req.params.tripId;
+  const { category, amount, description } = req.body;
+
+  if (!category || !amount) {
+    return res.status(400).json({ message: 'Category and amount are required' });
+  }
+
+  try {
+    const [trip] = await db.promise().query('SELECT * FROM trips WHERE id = ? AND user_id = ?', [tripId, userId]);
+    if (trip.length === 0) {
+      return res.status(404).json({ message: 'Trip not found' });
+    }
+
+    const [result] = await db.promise().query(
+      'INSERT INTO expenses (trip_id, category, amount, description) VALUES (?, ?, ?, ?)',
+      [tripId, category, amount, description || null]
+    );
+
+    // Cập nhật total_cost trong bảng trips
+    await db.promise().query(
+      'UPDATE trips SET total_cost = (SELECT SUM(amount) FROM expenses WHERE trip_id = ?) WHERE id = ?',
+      [tripId, tripId]
+    );
+
+    res.status(201).json({ message: 'Expense created successfully', expenseId: result.insertId });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+// Lấy danh sách chi phí của một chuyến đi
+const getExpenses = async (req, res) => {
+  const userId = req.user.id;
+  const tripId = req.params.tripId;
+
+  try {
+    const [trip] = await db.promise().query('SELECT * FROM trips WHERE id = ? AND user_id = ?', [tripId, userId]);
+    if (trip.length === 0) {
+      return res.status(404).json({ message: 'Trip not found' });
+    }
+
+    const [expenses] = await db.promise().query('SELECT * FROM expenses WHERE trip_id = ?', [tripId]);
+    res.status(200).json(expenses);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+// Xóa chi phí
+const deleteExpense = async (req, res) => {
+  const userId = req.user.id;
+  const tripId = req.params.tripId;
+  const expenseId = req.params.expenseId;
+
+  try {
+    const [trip] = await db.promise().query('SELECT * FROM trips WHERE id = ? AND user_id = ?', [tripId, userId]);
+    if (trip.length === 0) {
+      return res.status(404).json({ message: 'Trip not found' });
+    }
+
+    const [expense] = await db.promise().query('SELECT * FROM expenses WHERE id = ? AND trip_id = ?', [expenseId, tripId]);
+    if (expense.length === 0) {
+      return res.status(404).json({ message: 'Expense not found' });
+    }
+
+    await db.promise().query('DELETE FROM expenses WHERE id = ? AND trip_id = ?', [expenseId, tripId]);
+
+    // Cập nhật lại total_cost
+    await db.promise().query(
+      'UPDATE trips SET total_cost = (SELECT SUM(amount) FROM expenses WHERE trip_id = ?) WHERE id = ?',
+      [tripId, tripId]
+    );
+
+    res.status(200).json({ message: 'Expense deleted successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+module.exports = {
+  createExpense,
+  getExpenses,
+  deleteExpense,
+};

@@ -1,0 +1,68 @@
+.trip-history-container {
+    display: flex;
+    height: 100vh;
+    background-color: #001840;
+    color: #FFFEF0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .trip-list {
+    width: 30%;
+    padding: 20px;
+    background-color: rgba(16, 42, 113, 0.8);
+    overflow-y: auto;
+  }
+  
+  .trip-list h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #FFDF5F;
+  }
+  
+  .trip-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .trip-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .trip-details {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: rgba(16, 42, 113, 0.5);
+  }
+  
+  .trip-details h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .trip-details p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .leaflet-container {
+    border-radius: 10px;
+  }
+  .trip-details ul {
+    list-style-type: none; /* Bỏ dấu chấm mặc định */
+    padding: 0;
+    margin-left: 0; /* Đảm bảo danh sách sát mép trái */
+    text-align: left; /* Căn trái nội dung */
+  }
+  
+  .trip-details li {
+    background-color: rgba(255, 255, 255, 0.1); /* Màu nền nhẹ */
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    color: #FFFEF0; /* Màu chữ */
+  }
+  
