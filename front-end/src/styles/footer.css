@@ -1,0 +1,99 @@
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-evenly; /* Căn các cột cách đều nhau */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .footer-section {
+    flex: 1;  /* Các cột tự động co giãn để cân bằng khoảng cách */
+    max-width: 280px; /* Giới hạn kích thước tối đa */
+    min-width: 250px; /* Kích thước nhỏ nhất để không bị quá hẹp */
+    text-align: left;
+    padding: 10px;
+  }
+  
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
+  }
+  
+  .footer-section p,
+  .footer-section ul {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin: 5px 0;
+  }
+  
+  .footer-section ul li a {
+    color: #ddd;
+    text-decoration: none;
+  }
+  
+  .footer-section ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Căn chỉnh hình ảnh tải ứng dụng */
+  .download-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .download-links img {
+    width: 150px;
+    height: auto;
+  }
+  
+  /* Bản đồ */
+  .google-map {
+    border: none;
+    width: 100%;
+    height: 200px;
+  }
+  
+  /* Phần dưới cùng của footer */
+  .footer-bottom {
+    border-top: 1px solid #555;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  /* Đáp ứng màn hình nhỏ */
+  @media screen and (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-section {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .download-links {
+      align-items: center;
+    }
+  }
+  

@@ -1,0 +1,129 @@
+/* Home.css */
+.home {
+    position: relative;
+    min-height: 100vh;
+    background-color: #87CEEB; /* Dark blue background */
+    color: #FFFEF0; /* Off-white text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+  }
+  
+  /* Background CheapTrip logo (now an image) */
+  .background-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%; /* Adjust size to fit nicely in the background */
+    max-width: 500px; /* Limit the maximum size */
+    opacity: 0.2; /* Semi-transparent effect ("ẩn ẩn") */
+    object-fit: contain; /* Ensure the image scales properly */
+    pointer-events: none; /* Prevent interaction with the background image */
+  }
+  
+  /* Main content */
+  .content {
+    text-align: center;
+    z-index: 1; /* Ensure content is above the background logo */
+  }
+  
+  /* Search/Input bar */
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: rgba(16, 42, 113, 0.3); /* Semi-transparent blue (#102A71) */
+    border: 1px solid rgba(255, 254, 240, 0.3); /* Off-white border */
+    border-radius: 50px;
+    padding: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 20px;
+  }
+  
+  /* Search bar input */
+  .search-bar input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: #FFFEF0; /* Off-white text */
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+  
+  /* Placeholder text */
+  .search-bar input::placeholder {
+    color: rgba(255, 254, 240, 0.5); /* Semi-transparent off-white */
+  }
+  
+  /* Search button */
+  .search-button {
+    background-color: #F5C400; /* Yellow */
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .search-button:hover {
+    background-color: #FFDF5F; /* Light yellow on hover */
+  }
+    
+  /* Buttons */
+  .buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .try-cheaptrip-button,
+  .api-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .try-cheaptrip-button {
+    background-color: #F5C400; /* Yellow */
+    color: #001840; /* Dark blue text */
+    border: none;
+  }
+  
+  .try-cheaptrip-button:hover {
+    background-color: #FFDF5F; /* Light yellow on hover */
+  }
+  
+  .api-button {
+    background-color: rgba(16, 42, 113, 0.3);
+    color: #FFFEF0; /* Off-white */
+    border: 1px solid rgba(255, 254, 240, 0.5); /* Off-white border */
+  }
+  
+  .api-button:hover {
+    background-color: rgba(16, 42, 113, 0.3); /* Semi-transparent blue (#102A71) */
+  }
+  
+  /* Scroll indicator */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.5;
+  }
+  
+  .scroll-indicator svg {
+    color: #FFFEF0; /* Off-white */
+  }
