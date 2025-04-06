@@ -1,0 +1,61 @@
+// controllers/reminderController.js
+const db = require('../config/db');
+
+// Tạo nhắc nhở mới
+const createReminder = async (req, res) => {
+  const userId = req.user.id;
+  const { title, description, reminder_time } = req.body;
+
+  if (!title || !reminder_time) {
+    return res.status(400).json({ message: 'Title and reminder_time are required' });
+  }
+
+  try {
+    const [result] = await db.promise().query(
+      'INSERT INTO reminders (user_id, title, description, reminder_time) VALUES (?, ?, ?, ?)',
+      [userId, title, description || null, reminder_time]
+    );
+    res.status(201).json({ message: 'Reminder created successfully', reminderId: result.insertId });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+// Lấy danh sách nhắc nhở
+const getReminders = async (req, res) => {
+  const userId = req.user.id;
+
+  try {
+    const [reminders] = await db.promise().query('SELECT * FROM reminders WHERE user_id = ?', [userId]);
+    res.status(200).json(reminders);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+// Xóa nhắc nhở
+const deleteReminder = async (req, res) => {
+  const userId = req.user.id;
+  const reminderId = req.params.id;
+
+  try {
+    const [reminder] = await db.promise().query('SELECT * FROM reminders WHERE id = ? AND user_id = ?', [reminderId, userId]);
+    if (reminder.length === 0) {
+      return res.status(404).json({ message: 'Reminder not found' });
+    }
+
+    await db.promise().query('DELETE FROM reminders WHERE id = ? AND user_id = ?', [reminderId, userId]);
+    res.status(200).json({ message: 'Reminder deleted successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+module.exports = {
+  createReminder,
+  getReminders,
+  deleteReminder,
+};
