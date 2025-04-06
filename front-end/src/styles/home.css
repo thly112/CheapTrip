@@ -118,12 +118,24 @@
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
   }
   
+  .chat-message {
+    display: flex;
+    margin: 0.3rem 0;
+  }
+  
+  .chat-message.user {
+    justify-content: flex-end; /* User bên phải */
+  }
+  
+  .chat-message.bot {
+    justify-content: flex-start; /* Bot bên trái */
+  }
+  
   .chat-message.user .message-content {
     background-color: #007bff;
     color: white;
     border-radius: 1rem 1rem 0 1rem;
     padding: 0.5rem 1rem;
-    margin: 0.3rem 0;
     display: inline-block;
     max-width: 80%;
   }
@@ -133,7 +145,6 @@
     color: #333;
     border-radius: 1rem 1rem 1rem 0;
     padding: 0.5rem 1rem;
-    margin: 0.3rem 0;
     display: inline-block;
     max-width: 80%;
   }
