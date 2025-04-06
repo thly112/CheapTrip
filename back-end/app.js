@@ -1,11 +1,10 @@
-const express = require("express");
-const cors = require("cors");
-const itineraryRoutes = require("./routes/itineraryRoutes"); // ✔️
-
+const express = require('express');
 const app = express();
-app.use(cors());
-app.use(express.json());
+const aiRoutes = require('./routes/ai');
 
-app.use("/api/itinerary", itineraryRoutes); // ✔️ Phải là router
+require('dotenv').config();
+
+app.use(express.json());
+app.use('/api/ai', aiRoutes);
 
 module.exports = app;
